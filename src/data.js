@@ -3,6 +3,7 @@ const Users = [
       id: 1,
       name: "Fikayo Adepoju",
       email: "fik4christ@yahoo.com",
+      age: 30,
       posts: [
         {
           id: 1,
@@ -34,6 +35,7 @@ const Users = [
       id: 2,
       name: "John Doe",
       email: "john@company.com",
+      age: 33,
       posts: [
         {
           id: 4,
@@ -55,6 +57,7 @@ const Users = [
     {
       id: 3,
       name: "Jane Paul",
+      // age: 21,
       email: "jane@company.com",
       posts: []
     }

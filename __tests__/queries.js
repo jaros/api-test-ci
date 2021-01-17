@@ -13,15 +13,20 @@ test("fetch users", async (done) => {
   request
     .post("/graphql")
     .send({
-      query: "{ users{ id, name} }",
+      query: "{ users{ id, name, age} }",
     })
     .set("Accept", "application/json")
     .expect("Content-Type", /json/)
-    .expect(200)
+    // .expect(200)
     .end(function (err, res) {
       if (err) return done(err);
       expect(res.body).toBeInstanceOf(Object);
-      expect(res.body.data.users.length).toEqual(3);
+      const {data, errors} = res.body;
+      if (errors) {
+        return done(errors);
+      }
+      console.log(data);
+      expect(data.users.length).toEqual(3);
       done();
     });
 });

@@ -9,7 +9,8 @@ const schema = buildSchema(`
     type User {
         id: ID!
         name: String!
-        email: String
+        email: String,
+        age: Int,
         posts: [Post!]
     }
  
