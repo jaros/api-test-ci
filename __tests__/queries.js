@@ -25,3 +25,14 @@ test("fetch users", async (done) => {
       done();
     });
 });
+
+test("query that does not exist", async () => {
+    const response = await request
+      .post("/graphql")
+      .send({
+        query: "{ events{ id, name} }",
+      })
+      .set("Accept", "application/json");
+  
+  expect(response.status).toBe(400);
+});
